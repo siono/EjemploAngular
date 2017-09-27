@@ -1,19 +1,48 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-//Con el decorador '@Component' otorgamos a la clase 
-//decorada comportamiento de componente
+// Con el decorador '@Component' otorgamos a la clase
+// decorada comportamiento de componente.
 @Component({
-  //El metadato 'selector' indica el selector CSS encargado 
-  //de seleccionar el elemento HTML en el cual instanciar 
+  // El metadato 'selector' indica el selector CSS encargado
+  // de seleccionar el elemento HTML en el cual instanciar
   // el componente.
   selector: 'app-root',
-  // El 'templateUrl' indicamos la ruta al template (documetno HTML)
-  //asociado al componente.
+  // En 'templateUrl' indicamos la ruta al template (documento HTML)
+  // asociado al componente.
   templateUrl: './app.component.html',
-  // En 'styleUrl' indicamos la/s ruta/s de las hojas de estilo que aplican
-  // SOLO al componente.
+  // En 'styleUrls' indicamos la/s ruta/s de las hojas de estilo
+  // que aplican al componente.
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  
+export class AppComponent implements OnInit {
+
+  nombres: string[] = [
+    "Steve Jobs",
+    "Steve Wozniak",
+    "Bill Gates",
+    "Sundar Pichai",
+    "Elon Musk",
+    "Bob Esponja"
+  ];
+
+  constructor() {
+    console.log('Estoy en el constructor!');
+  }
+
+  // El hook 'OnInit' se ejecuta cuando el componente tiene
+  // asociado su template correspondiente, por tanto es el
+  // momento ideal para enlazar datos entre ellos.
+  ngOnInit(): void {
+    console.log('Estoy en el hook OnInit!');
+  }
+
+  eliminarContacto(nombre: string): void {
+    // Para eliminar un contacto lo que hacemos es
+    // filtrar la colección y quedarnos con todos
+    // aquellos que no sean el indicado.
+    this.nombres = this.nombres.filter(function(n) {
+       return n !== nombre;
+    });
+   
+  }
 }
