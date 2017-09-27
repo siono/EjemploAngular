@@ -2,8 +2,8 @@
     <!--
       La directiva 'NgFor' itera por una colección dada y por cada elemento añade la jerarquía de etiquetas HTML sobre la cuál se está usando.
       -->
-    <li *ngFor="let contacto of contactos" [class.rojo]="contacto.toLowerCase().startsWith('s')">
-      {{ contacto}}
+    <li *ngFor="let contacto of contactos" [class.rojo]="contacto.nombre.toLowerCase().startsWith('s')">
+      {{ contacto.nombre}} {{ contacto.apellidos}}
       <!-- La suscripción a eventos se hace poniendo entre paréntesis el nombre del mismo. -->
       <button (click)="notificarEliminacionContacto(contacto)">Eliminar</button>
     </li>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactosService } from './contactos.service';
+import { Contacto } from './contacto';
 
 // Con el decorador '@Component' otorgamos a la clase
 // decorada comportamiento de componente.
@@ -17,7 +18,7 @@ import { ContactosService } from './contactos.service';
 })
 export class AppComponent implements OnInit {
 
-  nombres: string[];
+  nombres: Contacto[];
 
   // Para hacer la inyección de dependencias de un servicio
   // debemos hacerlo en el constructor de la clase. Anotamos
@@ -36,7 +37,7 @@ export class AppComponent implements OnInit {
     this.nombres = this._contactosService.obternerContactos();
   }
 
-  eliminarContacto(nombre: string): void{
+  eliminarContacto(nombre: Contacto): void{
     this._contactosService.eliminarContacto(nombre);
     this.nombres= this._contactosService.obternerContactos();
   }
