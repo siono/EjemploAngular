@@ -1,0 +1,19 @@
+<form [formGroup]="formulario" (ngSubmit)="notificarGuardadoContacto()">
+  <div>
+    <label for="">Nombre</label>
+    <input type="text" formControlName="nombre">
+    <span *ngIf="formulario.get('nombre').touched && formulario.get('nombre').invalid">
+      El nombre del contacto es obligatorio
+    </span>
+  </div>
+  <div>
+    <label for="">Apellidos</label>
+    <input type="text" formControlName="apellidos">
+    <span *ngIf="formulario.get('apellidos').touched && formulario.get('apellidos').invalid">
+        El apellido del contacto es obligatorio
+      </span>
+  </div>
+  <div>
+    <button type="submit" [disabled]="formulario.invalid">Guardar Contacto</button>
+  </div>
+</form>

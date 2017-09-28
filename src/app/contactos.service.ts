@@ -23,6 +23,10 @@ export class ContactosService {
     return this._nombres;
   }
 
+  agregarContacto(contacto: Contacto){
+    this._nombres.push(contacto);
+  }
+
   eliminarContacto(nombre: Contacto): void {
     // Para eliminar un contacto lo que hacemos es
     // filtrar la colección y quedarnos con todos

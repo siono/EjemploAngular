@@ -37,6 +37,12 @@ export class AppComponent implements OnInit {
     this.nombres = this._contactosService.obternerContactos();
   }
 
+  crearContacto(contacto: Contacto): void{
+    this._contactosService.agregarContacto(contacto);
+    this.nombres= this._contactosService.obternerContactos();
+
+  }
+
   eliminarContacto(nombre: Contacto): void{
     this._contactosService.eliminarContacto(nombre);
     this.nombres= this._contactosService.obternerContactos();
