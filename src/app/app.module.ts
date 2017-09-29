@@ -1,6 +1,9 @@
+import { RutaBComponent } from './ruta-b/ruta-b.component';
+import { RutaAComponent } from './ruta-a/ruta-a.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule} from './app-routing/app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
@@ -14,13 +17,16 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
   declarations: [
     AppComponent,
     ListaContactosComponent,
-    FormularioContactoComponent
+    FormularioContactoComponent,
+    RutaAComponent,
+    RutaBComponent
   ],
   // En el metadato 'omports' indicamos todos aquellos 
   //módulos de los cuáles mi aplicaciñon depende.
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   // En el metadato 'providers' indicamos todos aquellos
   // proveedores de clase o valores que puedan ser inyectados
