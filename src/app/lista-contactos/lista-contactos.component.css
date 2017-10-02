@@ -1,3 +1,17 @@
 .rojo{
     color:red;
 }
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin:0;
+    padding: 6px 14px;
+}
+
+li:hover{
+    background: lightgray;
+    cursor: pointer;
+}

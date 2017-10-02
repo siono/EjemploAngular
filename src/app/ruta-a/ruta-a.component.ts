@@ -1,14 +1,16 @@
-import { ContactosService } from '../contactos.service';
 import { Component, OnInit } from '@angular/core';
+
+import { ContactosService } from '../contactos.service';
 import { Contacto } from '../contacto';
 
 @Component({
-  selector: 'app-ruta-a',
   templateUrl: './ruta-a.component.html',
   styleUrls: ['./ruta-a.component.css']
 })
 export class RutaAComponent implements OnInit {
+
   nombres: Contacto[];
+  contactoSeleccionado: Contacto;
 
   // Para hacer la inyección de dependencias de un servicio
   // debemos hacerlo en el constructor de la clase. Anotamos
@@ -21,11 +23,16 @@ export class RutaAComponent implements OnInit {
   // asociado su template correspondiente, por tanto es el
   // momento ideal para enlazar datos entre ellos.
   ngOnInit(): void {
-    this.nombres = this._contactosService.obternerContactos();
+    this.nombres = this._contactosService.obtenerContactos();
   }
 
-  eliminarContacto(nombre: Contacto): void{
+  eliminarContacto(nombre: Contacto): void {
     this._contactosService.eliminarContacto(nombre);
-    this.nombres= this._contactosService.obternerContactos();
+    this.nombres = this._contactosService.obtenerContactos();
   }
+
+  verDetalles(nombre: Contacto): void {
+    this.contactoSeleccionado = nombre;
+  }
+
 }

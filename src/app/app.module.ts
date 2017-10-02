@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ListaContactosComponent } from './lista-contactos/lista-contactos.component';
 import {ContactosService} from './contactos.service';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
+import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
 // Usamos el decorador 'NgModule' para que la clase decorada se comporte 
 // como un módulo.
 @NgModule({
@@ -19,7 +20,8 @@ import { FormularioContactoComponent } from './formulario-contacto/formulario-co
     ListaContactosComponent,
     FormularioContactoComponent,
     RutaAComponent,
-    RutaBComponent
+    RutaBComponent,
+    DetallesContactoComponent
   ],
   // En el metadato 'omports' indicamos todos aquellos 
   //módulos de los cuáles mi aplicaciñon depende.

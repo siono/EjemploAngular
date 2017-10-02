@@ -1,38 +1,65 @@
 import { Injectable } from '@angular/core';
 
-import {Contacto} from './contacto';
+import { Contacto } from './contacto';
 
-// Para hacer la inyección de dependencias de un servicio
-// debemos hacerlo en el constructor de la clase. Anotamos
-// un parámetro con el tipo de servicio a inyectar y
-// añadimos el modificador de acceso correspondiente al
-// parámetro.
+// El decorador 'Injectable' indica que la clase decorada
+// debe comportarse como un servicio.
 @Injectable()
 export class ContactosService {
 
   private _nombres: Contacto[] = [
-    new Contacto(1, 'Steve', 'Jobs'),
-    new Contacto(2, 'Steve', 'Wozniak'),
-    new Contacto(3, 'Bill', 'Gates'),
-    new Contacto(4, 'Sundar', 'Pichai'),
-    new Contacto(5, 'Elon', 'Musk'),
-    new Contacto(6, 'Bob', 'Esponja')
+    new Contacto(
+      1,
+      'Steve',
+      'Jobs',
+      '555 666 777',
+      'steve.jobs@apple.com'
+    ),
+    new Contacto(
+      2,
+      'Steve',
+      'Wozniak',
+      '765 890 345',
+      'steve.wozniak@apple.com'
+    ),
+    new Contacto(
+      3,
+      'Bill',
+      'Gates'
+    ),
+    new Contacto(
+      4,
+      'Sundar',
+      'Pichai',
+      null,
+      'sundar.pichai@google.com'
+    ),
+    new Contacto(
+      5,
+      'Elon',
+      'Musk',
+      '345 213 456'
+    ),
+    new Contacto(
+      6,
+      'Bob',
+      'Esponja',
+      '123 123 123',
+      'bob.esponja@dibus.es'
+    )
   ];
 
-  obternerContactos(): Contacto[] { 
+  obtenerContactos(): Contacto[] {
     return this._nombres;
   }
 
-  agregarContacto(contacto: Contacto){
+  agregarContacto(contacto: Contacto): void {
     this._nombres.push(contacto);
   }
 
   eliminarContacto(nombre: Contacto): void {
-    // Para eliminar un contacto lo que hacemos es
-    // filtrar la colección y quedarnos con todos
-    // aquellos que no sean el indicado.
     this._nombres = this._nombres.filter(function(n) {
-       return n.id !== nombre.id;
+      return n.id !== nombre.id;
     });
   }
 
