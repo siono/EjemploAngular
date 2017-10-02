@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { RutaBComponent } from './ruta-b/ruta-b.component';
 import { RutaAComponent } from './ruta-a/ruta-a.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +29,8 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   // En el metadato 'providers' indicamos todos aquellos
   // proveedores de clase o valores que puedan ser inyectados
