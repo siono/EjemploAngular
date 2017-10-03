@@ -24,7 +24,7 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
     RutaBComponent,
     DetallesContactoComponent
   ],
-  // En el metadato 'omports' indicamos todos aquellos 
+  // En el metadato 'imports' indicamos todos aquellos 
   //módulos de los cuáles mi aplicaciñon depende.
   imports: [
     BrowserModule,

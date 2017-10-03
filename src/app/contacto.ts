@@ -7,4 +7,5 @@ export class Contacto {
     public email?: string,
     public facebook?: string,
     public twitter?: string){}
+
 }
