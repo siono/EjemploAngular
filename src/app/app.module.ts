@@ -11,6 +11,7 @@ import { ListaContactosComponent } from './lista-contactos/lista-contactos.compo
 import {ContactosService} from './contactos.service';
 import { FormularioContactoComponent } from './formulario-contacto/formulario-contacto.component';
 import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto.component';
+import { DatosContactoPipe } from './datos-contacto.pipe';
 // Usamos el decorador 'NgModule' para que la clase decorada se comporte 
 // como un módulo.
 @NgModule({
@@ -22,7 +23,8 @@ import { DetallesContactoComponent } from './detalles-contacto/detalles-contacto
     FormularioContactoComponent,
     RutaAComponent,
     RutaBComponent,
-    DetallesContactoComponent
+    DetallesContactoComponent,
+    DatosContactoPipe
   ],
   // En el metadato 'imports' indicamos todos aquellos 
   //módulos de los cuáles mi aplicaciñon depende.
